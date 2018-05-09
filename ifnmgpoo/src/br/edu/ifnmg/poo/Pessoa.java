@@ -5,6 +5,8 @@
  */
 package br.edu.ifnmg.poo;
 
+import com.sun.org.apache.xml.internal.serializer.ToStream;
+
 /**
  *
  * @author ifnmg
@@ -12,9 +14,20 @@ package br.edu.ifnmg.poo;
 public class Pessoa {
     
     private String nome;
+    private long cpf;
+    private String id;
     
+    public Pessoa(){
+        this.cpf=0l;
+        this.nome="sem nome";
+    }
     
-    private void setNome (String nome){
+    public Pessoa(long cpf, String nome){
+        this.cpf= cpf;
+        this.nome= nome;
+    }
+    
+    public void setNome(String nome){
         this.nome= nome;
 
     }
@@ -23,4 +36,28 @@ public class Pessoa {
          return this.nome;
      }
     
+    public void setCpf(long cpf){
+        this.cpf=cpf;
+    }
+    
+    public long getCpf(){
+        return this.cpf;
+    }
+    
+    public void setId(String id){
+        this.id= id;
+
+    }
+    
+    public String getId(){
+         return this.id;
+     }
+   @Override /*sobrescreve um metodo*/
+   public String toString(){
+       return this.cpf +"\t"+this.nome;
+   }
+      
+    
 }
+
+
